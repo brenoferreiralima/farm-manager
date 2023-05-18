@@ -1,9 +1,10 @@
+""" animals urls """
 from django.urls import path
 from . import views
 
 
-app_name = 'animals'
+APP_NAME = "animals"
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('detail/', views.detail, name='detail'),
+    path("", views.index, name="index"),
+    path("detail/", views.detail, name="detail"),
 ]
