@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from .models import Animal
 
-# Create your views here.
+
 # list of all registered animals
 def index(request):
-    return render(request, "animals_index.html")
+    animals = Animal.objects.all() # all registered animals
+    context = {"animals": animals} # variables sent to the view
+    return render(request, "animals_index.html", context)
 
 
 def detail(request):
